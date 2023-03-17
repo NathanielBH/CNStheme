@@ -16,14 +16,15 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
       background-color: #ffffff;;
       font-family: 'Domine', serif; 
   }
-.my-logo,
+
+.site-header,
 footer {
   width: 100%;
   padding-left: 1%;
   margin-bottom: 8px;
   background-color: #ffffff;;
-  border: 1px solid #78baff;
 }
+
 header{
   text-align: center;
   font-weight: bold;
@@ -37,9 +38,21 @@ article > header {
 footer {
   margin-top: 4px;
 }
-a {
+
+/*links*/
+a{
   text-decoration: none;
+
 }
+
+a:link, a:visited {
+  color: black;
+}
+
+a:hover {
+  color: grey;
+}
+
 /* 'Margin: 0 auto' centers block content on the page */
 .wrap {
   width: 99%;
@@ -83,12 +96,62 @@ a {
   margin-bottom: 4px;
 }
 
-//article image styling
-img{
-	width: 300px;
-  	height: 200px;
+/*footer*/
+.site-footer{
+	margin-top: 30px;
+	border-top:2px solid #999;
 }
-.figure{
-	width: 300px;
-  	height: 200px;
+
+/*navitagion menus*/
+.site-nav ul{
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav ul:before, 
+.site-nav ul:after {
+	content: ""; 
+	display: table; 
+}
+.site-nav ul:after {
+	clear: both;
+}
+
+.site-nav ul { 
+	*zoom: 1;
+}
+
+.site-nav ul li {
+	list-style: none;
+	float: left;
+}
+
+/* Site Header Menu */
+
+.site-header nav ul li {
+	margin-right: 5px;
+}
+
+.site-header nav ul li a:link,
+.site-header nav ul li a:visited {
+	display: block;
+	padding: 10px 50px;
+	border-bottom: none;
+	text-decoration: none;
+	margin-top: 5p
+}
+
+.site-header nav ul li a:hover {
+	color: grey;
+}
+
+.site-header nav ul li.current-menu-item a:link,
+.site-header nav ul li.current-menu-item a:visited {
+	background-color: #006ec3;
+	color: #FFF;
+}
+
+.site-nav {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
 }

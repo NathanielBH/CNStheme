@@ -7,12 +7,7 @@
           <h2><?php the_title(); ?></h2>
           By: <?php the_author(); ?>
         </header>
-        <?php if ( has_post_thumbnail() ) : ?>
-          <figure class = "figure">
-            <?php the_post_thumbnail(); ?>
-            <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
-          </figure>
-        <?php endif; ?>
+
         <?php the_content(); ?>
       </article>
     <?php endwhile; else : ?>

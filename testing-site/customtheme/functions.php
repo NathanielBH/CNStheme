@@ -21,11 +21,10 @@ function add_widget_support() {
 add_action( 'widgets_init', 'add_widget_support' );
 
  // Register a new navigation menu
- function add_Main_Nav() {
-    register_nav_menu('header-menu',__( 'Header Menu' ));
-  }
-  // Hook to the init action hook, run our navigation menu function
-  add_action( 'init', 'add_Main_Nav' );
+register_nav_menus( array(
+		'header-menu' => __( 'Header Menu' ),
+		'footer' => __( 'Footer Menu')
+	));
 
 //thumbnail functions
 function my_post_thumbnail_class( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
@@ -39,15 +38,3 @@ function my_custom_thumbnail_size() {
 }
 add_action( 'after_setup_theme', 'my_custom_thumbnail_size' );
 
-//more nav cuntionality
-class Custom2_Walker_Nav_Menu extends Walker_Nav_Menu {
-  function start_lvl(&$output, $depth = 0, $args = array()) {
-    $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"sub-menu\">\n";
-  }
-
-  function end_lvl(&$output, $depth = 0, $args = array()) {
-    $indent = str_repeat("\t", $depth);
-    $output .= "$indent</ul>\n";
-  }
-}
