@@ -102,56 +102,107 @@ a:hover {
 	border-top:2px solid #999;
 }
 
+.site-footer ul li a{
+	color: blue;
+}
+
+.site-footer ul li{
+	display: inline-block;
+	margin-left: 10px;
+}
+
+
 /*navitagion menus*/
+
 .site-nav ul{
-	margin: 0;
-	padding: 0;
+margin: 0;
+padding: 0;
 }
 
-.site-nav ul:before, 
+.site-nav ul:before,
 .site-nav ul:after {
-	content: ""; 
-	display: table; 
+content: "";
+display: table;
 }
 .site-nav ul:after {
-	clear: both;
+clear: both;
 }
 
-.site-nav ul { 
-	*zoom: 1;
+.site-nav ul {
+display: flex;
+justify-content: center;
+align-items: center;
+list-style: none;
+padding: 0;
+margin: 0;
 }
 
 .site-nav ul li {
-	list-style: none;
-	float: left;
+flex: 1;
+text-align: center;
+position: relative; /* added */
 }
 
 /* Site Header Menu */
 
 .site-header nav ul li {
-	margin-right: 5px;
+margin-right: 0;
 }
 
 .site-header nav ul li a:link,
 .site-header nav ul li a:visited {
-	display: block;
-	padding: 10px 50px;
-	border-bottom: none;
-	text-decoration: none;
-	margin-top: 5p
+display: block;
+padding: 10px 50px;
+border-bottom: none;
+text-decoration: none;
+margin-top: 5p
 }
 
 .site-header nav ul li a:hover {
-	color: grey;
+color: grey;
 }
 
 .site-header nav ul li.current-menu-item a:link,
 .site-header nav ul li.current-menu-item a:visited {
-	background-color: #006ec3;
-	color: #FFF;
+background-color: #006ec3;
+color: #FFF;
 }
 
 .site-nav {
-	border-top: 1px solid;
-	border-bottom: 1px solid;
+border-top: 1.5px solid;
+border-bottom: 0.75px solid;
+width: 97%;
+margin-left: 1%;
+}
+
+/* Style for the dropdown sub-menu */
+.site-nav ul.sub-menu {
+position: absolute;
+top: 100%;
+left: 0;
+width: 200px;
+display: none;
+z-index: 999;
+padding: 0;
+}
+
+.site-nav ul.sub-menu li {
+float: none;
+background-color: #f1f1f1;
+}
+
+.site-nav ul.sub-menu a {
+padding: 10px;
+color: #000;
+}
+
+.site-nav ul.sub-menu a:hover {
+background-color: #ddd;
+}
+
+.site-nav li:hover > ul.sub-menu {
+display: block;
+position: absolute; /* added */
+top: 100%; /* added */
+margin-left: 16%; /* added */
 }
