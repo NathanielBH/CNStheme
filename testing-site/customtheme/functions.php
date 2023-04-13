@@ -38,3 +38,15 @@ function my_custom_thumbnail_size() {
 }
 add_action( 'after_setup_theme', 'my_custom_thumbnail_size' );
 
+//featured image functions
+function custom_featured_image_size() {
+  add_image_size( 'featured-image-size', 1000, 1000, true ); // adjust dimensions to your liking
+}
+add_action( 'after_setup_theme', 'custom_featured_image_size' );
+
+function latest_thumbnail_size() {
+    add_image_size( 'latest-image-size', 200, 200, true );
+}
+add_action( 'after_setup_theme', 'latest_thumbnail_size' );
+
+

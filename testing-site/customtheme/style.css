@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 @import url('https://fonts.googleapis.com/css?family=Domine&display=swap');
 * {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
   }
   
   body {
@@ -62,7 +62,7 @@ a:hover {
   display: inline-block;
 }
 .content-thin {
-    width: 70%;
+    width: 100%;
 }
 .content-full-width {
     width: 100%;
@@ -76,6 +76,8 @@ a:hover {
   padding: 1%;
   vertical-align: top;
   background-color: #ececec;
+  float: right;
+  margin-right: 1.5%;
 }
 .article-loop {
     width: 45%;
@@ -169,10 +171,12 @@ color: #FFF;
 }
 
 .site-nav {
-border-top: 1.5px solid;
-border-bottom: 0.75px solid;
-width: 97%;
-margin-left: 1%;
+  border-top: 0.75px solid;
+  border-bottom: 0.75px solid;
+  width: 97%;
+  margin-left: 1%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2),
+			 0px -1px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for the dropdown sub-menu */
@@ -206,3 +210,64 @@ position: absolute; /* added */
 top: 100%; /* added */
 margin-left: 16%; /* added */
 }
+
+/*Grid Layout Rules */
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "main main latest"
+	"main main latest"
+    "content content content";
+}
+
+.main-article {
+  grid-area: main;
+	margin-left: 10px;
+	width: 100%;
+	height: 30%;
+}
+}
+
+.latest-posts {
+  grid-area: latest;
+}
+
+.content-area {
+  grid-area: content;
+}
+
+
+/* other rules */
+.main-article .article-loop{
+	width: 100%;
+}
+
+.sidebar aside{
+	width: 60%;
+}
+
+.latest-posts .article-loop{
+	width:50%;
+}
+
+.latest-posts {
+  border: 1px solid #ccc;
+  padding: 10px;
+	margin-right: 0%;
+	margin-left:7%;
+	margin-top: 3%;
+	width: 80%;
+}
+
+  .image-container {
+    max-width: 700px; /* set the maximum width of the figure container */
+    margin: 0 auto; /* center the container horizontally */
+  }
+
+  .main-image {
+    max-width: 100%; /* make the image scale down to fit the container width */
+    height: auto; /* maintain the image's aspect ratio */
+    display: block; /* remove any extra space below the image */
+  }
